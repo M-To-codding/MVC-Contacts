@@ -1,21 +1,14 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const port = 8000;
-const public = __dirname + '/../client/public/';
+const app = require('express')(),
+    bodyParser = require('body-parser'),
+    config = require('./resources/config'),
+    contacts = require('./src/index');
 
-app.configure = function () {
-    app.use(app.router);
-}
-
-
-app.get('/', function (req, res) {
-    res.sendFile(path.join(public + 'index.js'));
-});
-
-app.use('/', express.static(public));
-
-// require('../client/app/routes')(app, {});
-app.listen(port, () => {
+app.listen(config.port, () => {
     console.log('It`s work');
 });
+
+app.use(bodyParser.json());
+
+app.use('/', contacts);
+
+module.exports = app;

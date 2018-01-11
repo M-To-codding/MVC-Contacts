@@ -1,1 +1,3 @@
-document.body.innerHTML = 'Hello world!';
+window.onload = function () {
+    document.body.innerHTML = 'Hello world!';
+}
