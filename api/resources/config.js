@@ -1,4 +1,4 @@
 module.exports = {
     port: 8000,
-    ip: '127.0.0.1'
+    dbUrl: 'mongodb://marina:marina@ds251747.mlab.com:51747/contacts_list'
 }

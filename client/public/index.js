@@ -1,15 +1,22 @@
+const express = require('express');
+
 $(document).ready(function () {
+
+    var url = window.location.pathname;
 
     function init() {
 
-        $('#main-content').html('');
+        if (url === '/api/v1/') {
 
-        $('#main-content').append('<article id="contacts-content"></article>');
-        $('#main-content').append('<article id="groups-content"></article>');
+            $('#main-content').html('');
 
-        $('#contacts-content').load('contacts/contacts.html');
-        $('#groups-content').load('groups/groups.html');
+            $('#main-content').append('<article id="contacts-content"></article>');
+            $('#main-content').append('<article id="groups-content"></article>');
 
+            $('#contacts-content').load('views/contacts.html');
+            $('#groups-content').load('views/groups.html');
+
+        }
     }
 
     init();
