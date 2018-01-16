@@ -1,14 +1,12 @@
 const express = require('express'),
-    path = require('path'),
     router = express.Router(),
-    public = __dirname + '../../../../client/public/contacts/';
+    Contact = require('../model/contacts');
 
-router.use(express.static(public));
 
-router.get('/api/v1/contacts/', function (req, res, next) {
-    res.setHeader('content-type', 'application/javascript');
-    // res.sendFile(path.join(public + 'contacts.html'));
-    // next();
+router.get('/contacts', function (req, res, next) {
+    Contact.find({}, function (err, contacts) {
+        res.json({contacts});
+    })
 });
 
 module.exports = router;
