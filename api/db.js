@@ -1,5 +1,5 @@
 const mongoose = require('mongoose'),
-    config = require('resources/config');
+    config = require('./resources/config');
 
 mongoose.connect(config.dbUrl, err => {
     if (err) {
