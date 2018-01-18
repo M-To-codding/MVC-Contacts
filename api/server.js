@@ -9,7 +9,7 @@ const app = require('express')(),
 require('./db');
 
 
-app.listen(config.port, () => {
+app.listen(process.env.PORT || config.port, () => {
     console.log('It`s work');
 });
 
