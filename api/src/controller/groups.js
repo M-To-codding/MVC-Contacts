@@ -15,4 +15,15 @@ router.post('/groups/add', function (req, res, next) {
     });
 });
 
+router.delete('/group/:id', function (req, res, next) {
+    let id = req.params.id;
+    Group.remove({_id: id}, function () {
+        res.json({
+            'status': 'ok'
+        });
+    })
+});
+
+// router.update();
+
 module.exports = router;

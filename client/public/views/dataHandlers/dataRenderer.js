@@ -32,6 +32,11 @@ function addContact() {
     let nameInput = $('.contactName').val(),
         telInput = $('.contactTel').val();
 
+    if (!nameInput || !telInput) {
+        alert('Write correct data');
+        return;
+    }
+
     let item = {
         name: nameInput,
         tel: telInput
@@ -52,16 +57,37 @@ function addContact() {
 function addGroup() {
     let nameInput = $('.groupName').val();
 
+    if (!nameInput) {
+        alert('Write correct data');
+        return;
+    }
+
     let item = {
         name: nameInput,
     }
 
     console.log(nameInput);
+}
+
+function removeContact(event) {
+    let id = event.target.parentNode;
+    console.log(id.id);
     $.ajax({
-        url: '/api/v1/groups/add',
-        type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify(item),
+        url: '/api/v1/contact/' + id.id,
+        type: 'DELETE',
+        dataType: 'json',
+        success: function () {
+            getAllContacts();
+        }
+    })
+}
+
+function removeGroup(event) {
+    let id = event.target.parentNode;
+    console.log(id.id);
+    $.ajax({
+        url: '/api/v1/group/' + id.id,
+        type: 'DELETE',
         dataType: 'json',
         success: function () {
             getAllGroups();
