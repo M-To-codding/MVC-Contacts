@@ -1,2 +1,2 @@
 web: npm install
-web: node api/server.js
+web: node /api/server.js
