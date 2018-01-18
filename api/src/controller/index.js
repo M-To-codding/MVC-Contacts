@@ -5,10 +5,9 @@ const express = require('express'),
 
 router.use(express.static(public));
 
-router.get('/', function (req, res, next) {
+router.get('/', function (req, res) {
     res.setHeader('content-type', 'application/javascript');
     res.sendFile(path.join(public + 'index.html'));
-    next();
 });
 
 module.exports = router;
