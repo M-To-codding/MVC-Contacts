@@ -82,3 +82,46 @@ li {
     width: 170px;
 }
 
+.btns-container {
+    margin: auto;
+    width: 50%;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    background: #ffffff36;
+    font-size: 19px;
+    border: 2px solid white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 1s;
+    outline: none;
+    color: white;
+}
+
+.btn:hover {
+    background: #1a34b236;
+    transition: 1s;
+    border-color: #177adf;
+}
+.btn:active {
+    background: rgba(142, 171, 255, 0.78);
+    transition: 0.5s;
+    border-color: #9adbdf;
+}
+
+.add-group {
+    background: #679dffb8;
+    border-color: #177adf;
+}
+
+.add-group:hover {
+    background: #225fccb8;
+    border-color: #ffffff;
+}
+.add-group:active {
+     background: rgba(142, 171, 255, 0.78);
+     transition: 0.5s;
+     border-color: #9adbdf;
+ }

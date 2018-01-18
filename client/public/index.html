@@ -10,6 +10,11 @@
 <header class="main-header">
     <div class="container">
         <h1 class="header-title">Phone contacts</h1>
+        <div class="btns-container">
+            <button class="btn add-contact" onclick="generateModal('contacts')">Add new contact</button>
+            <button class="btn add-group" onclick="generateModal('groups')">Add new group</button>
+        </div>
+
     </div>
 </header>
 
@@ -22,6 +27,7 @@
 <script src="views/patterns/contacts.js"></script>
 <script src="views/patterns/groups.js"></script>
 <script src="views/dataHandlers/dataRenderer.js"></script>
+<script src="views/patterns/modalWindow.js"></script>
 <script src="index.js"></script>
 </body>
 </html>
