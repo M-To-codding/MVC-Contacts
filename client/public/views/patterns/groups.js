@@ -1,14 +1,24 @@
 function groupsPattern(data) {
-    $('#main-content').append('<div id="groups-content" class="groups-container"></div>');
+    if (!data) {
+        $('#main-content').append('<div class="no-groups">Add some group</div>');
+    } else {
+        generatePattern();
+    }
 
-    $('#groups-content').load('views/groups.html', function () {
-        $(data.groups).each(function (key, value) {
+    function generatePattern() {
+        $('#main-content').append('<div id="groups-content" class="groups-container"></div>');
 
-            let groupsData = `<li class="item group-item">
+        $('#groups-content').load('views/groups.html', function () {
+            $(data.groups).each(function (key, value) {
+
+                let groupsData = `<li class="item group-item" id="${value._id}">
             <span class="group-name">${value.name}</span>
+            <button type="submit" class="remove-btn" onclick="removeGroup(event)">X</button>
             </li>`;
 
-            $('#groups-list').append(groupsData);
-        })
-    });
+                $('#groups-list').append(groupsData);
+            })
+        });
+    }
+
 }

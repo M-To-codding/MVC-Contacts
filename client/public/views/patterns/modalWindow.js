@@ -3,7 +3,7 @@ function contactsModal() {
         <form id="contacts-modal" class="modal-window">
             <input type="text" class="contactName" placeholder="Name">
             <input type="text" class="contactTel" placeholder="Phone">
-            <button type="submit" id="submitContact"></button>
+            <button type="submit" id="submitContact">Save</button>
     </form>
     `;
 
@@ -15,7 +15,7 @@ function groupsModal() {
     
         <form id="groups-modal" class="modal-window">
             <input type="text" class="groupName" placeholder="Name">
-        <button type="submit" id="submitGroup"></button>
+        <button type="submit" id="submitGroup">Save</button>
         </form>
     `;
 
@@ -32,6 +32,12 @@ function removeModal() {
 function generateModal(itemType) {
     let contactsModalW = contactsModal(),
         groupsModalW = groupsModal();
+
+    let modal = document.querySelector('.modal-window');
+    if(modal){
+        $(modal).remove();
+        return;
+    }
 
     if (itemType === 'contacts') {
         $('body').append(contactsModalW);

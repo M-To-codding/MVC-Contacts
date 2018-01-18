@@ -56,6 +56,11 @@ li {
     margin: 2px 0;
 }
 
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+}
+
 .group-item {
     display: inline-block;
     padding: 15px 20px;
@@ -63,7 +68,9 @@ li {
 }
 
 .contact-tel {
-    float: right;
+    /*float: right;*/
+    display: block;
+    margin-left: auto;
 }
 
 .groups-container {
@@ -121,7 +128,48 @@ li {
     border-color: #ffffff;
 }
 .add-group:active {
-     background: rgba(142, 171, 255, 0.78);
-     transition: 0.5s;
-     border-color: #9adbdf;
- }
+    background: rgba(142, 171, 255, 0.78);
+    transition: 0.5s;
+    border-color: #9adbdf;
+}
+
+.remove-btn {
+    background: transparent;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+.modal-window {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #c6dfff;
+    border: 11px solid rgb(53, 192, 255);
+    height: 150px;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    box-shadow: 0px 0 2px 1px #177adf;
+}
+
+.groupName, .contactName, .contactTel {
+    padding: 10px;
+    width: 290px;
+    border: 1px solid #59a6ff;
+}
+
+#submitGroup, #submitContact {
+    width: 200px;
+    padding: 10px;
+    background-color: #baff9d8f;
+    border: 2px solid #25e73d;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
