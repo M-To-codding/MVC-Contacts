@@ -52,4 +52,20 @@ function generateModal(itemType) {
             removeModal();
         })
     }
+
+    handleModalExit();
+}
+
+function handleModalExit() {
+    if (document.querySelector('.modal-window')){
+        window.onkeyup = function(event){
+            handleModalBtns(event);
+        }
+    }
+}
+
+function handleModalBtns(e) {
+    if (e.keyCode === 27) {
+        removeModal();
+    }
 }

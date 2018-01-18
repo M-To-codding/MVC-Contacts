@@ -144,8 +144,8 @@ li {
     position: fixed;
     display: flex;
     flex-direction: column;
-    background-color: #c6dfff;
-    border: 11px solid rgb(53, 192, 255);
+    background-color: #c6dfffc7;
+    border: 11px solid rgba(53, 192, 255, 0.51);
     height: 150px;
     width: 500px;
     justify-content: center;

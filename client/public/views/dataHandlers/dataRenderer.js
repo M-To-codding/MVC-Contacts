@@ -67,6 +67,16 @@ function addGroup() {
     }
 
     console.log(nameInput);
+    $.ajax({
+        url: '/api/v1/groups/add',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(item),
+        dataType: 'json',
+        success: function () {
+            getAllGroups();
+        }
+    })
 }
 
 function removeContact(event) {
